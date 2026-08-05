@@ -43,6 +43,23 @@ In practice:
 - When a new idea is exciting but doesn't clearly pass the trust test, flag
   it rather than build it silently.
 
+### Subtraction as the default (2026-08-05)
+
+Elaborates principles 3, 9, and 10 with a concrete decision rule:
+
+- **When faced with two good design options, choose the simpler one.**
+- **Every visual element, animation, section, and sentence must justify its
+  existence.** If it doesn't clearly earn its place, cut it — don't keep it
+  because it's harmless.
+- **The default answer is subtraction, not addition.** When a section feels
+  like it needs more to feel finished, first ask whether something should
+  be removed instead of something added.
+- **Whitespace is not empty space — it is part of the design.** Don't fill
+  it out of a feeling that space must be "used."
+- **The machine is the hero. Everything else exists to support it** — copy,
+  layout, motion, color all serve the product; none of it should compete
+  with it for attention.
+
 ## Brand & product naming (2026-08-05)
 
 - **STACKD is the company brand.**
