@@ -7,14 +7,6 @@ import { ProductRenderSlot } from "./product-render-slot";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-const FEATURES = [
-  "Touchscreen",
-  "Cashless",
-  "Age Verification",
-  "Remote Monitoring",
-  "24/7 Availability",
-];
-
 // Swap in the chosen render's path once one is picked, e.g.
 // "/hero/stackd-machine.png" — nothing else in this component needs to change.
 const PRODUCT_IMAGE_SRC: string | undefined = undefined;
@@ -54,10 +46,9 @@ export function HeroProduct() {
             {...fadeUp(0.28)}
             className="mt-8 max-w-lg font-sans text-lg leading-relaxed text-offwhite/70"
           >
-            STACKD partners with premium hospitality venues to deploy smart,
-            remotely-monitored retail technology. Our first automated retail
-            solution focuses on premium vape products — infrastructure built
-            to scale into new categories over time.
+            STACKD installs, stocks, and manages smart vending technology in
+            premium hospitality venues — cashless, age-verified, and
+            remotely monitored.
           </motion.p>
 
           <motion.div
@@ -76,22 +67,6 @@ export function HeroProduct() {
             >
               How It Works
             </Link>
-          </motion.div>
-
-          <motion.div {...fadeUp(0.52)} className="mt-14">
-            <div className="flex flex-wrap gap-x-6 gap-y-3">
-              {FEATURES.map((feature) => (
-                <span
-                  key={feature}
-                  className="font-mono text-[11px] uppercase tracking-widest text-offwhite/50"
-                >
-                  {feature}
-                </span>
-              ))}
-            </div>
-            <p className="mt-4 font-sans text-sm text-offwhite/40">
-              STACKD manages everything.
-            </p>
           </motion.div>
         </div>
 
