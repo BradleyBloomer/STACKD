@@ -203,6 +203,29 @@ same physical object. Real reference photos of the actual D02 Pro unit
 supplied 2026-08-05 and independently confirm the 850×550×220mm figures
 already in use — no correction needed.
 
+**Meet STACKD render: approved and live (2026-08-05).** Stage 1 passed on
+the first submitted candidate — kept exactly as generated (hardware,
+lighting, composition, environment all untouched). Stage 2 compositing
+completed: the placeholder branding badge and the "VENDING MACHINE" idle
+screen were replaced with the real logo and the approved STACKD idle
+screen (logo, "Premium Automated Retail", teal accent line, "Tap to
+Begin", "Age Verification Required"), perspective-matched to the screen's
+keystone and the badge panel's tilt. Technique: a homography (projective)
+warp for the screen — plain affine/resize isn't sufficient for a keystoned
+surface — plus a feathered, photo-sampled gradient patch to erase the old
+badge text before placing the real logo (a flat-color patch showed as a
+visible box; a hard-edged patch showed as a visible seam — both had to be
+fixed). Source photo lives at `brand-source/originals/image-1785960086981.webp`
+(the Stage-1-approved, untouched original); the finished composite is at
+`brand-source/derivatives/meet-stackd-composite.png` (full quality) and
+`public/images/meet-stackd-machine.jpg` (web-optimized, what the site
+actually serves) — wired into `MACHINE_IMAGE_SRC` in
+`src/components/meet-stackd.tsx`. Reusable pipeline for future renders
+(e.g. the hero, once chosen): `brand-source/build-idle-screen.js` (flat
+idle-screen graphic) + `brand-source/composite-meet-stackd.js` (homography
+warp + logo compositing) — corner coordinates and patch geometry will need
+re-deriving per new photo, everything else can be reused as-is.
+
 **Rendering workflow — the standing two-stage review (2026-08-05).** Every
 future machine render, hero or otherwise, is judged in this order:
 

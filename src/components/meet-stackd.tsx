@@ -4,8 +4,8 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { StackdIconReversed } from "./stackd-icon-reversed";
 
-// Swap in once a render is chosen — nothing else here needs to change.
-const MACHINE_IMAGE_SRC: string | undefined = undefined;
+// Approved Stage 1 hardware render, Stage 2 (logo + idle screen) composited.
+const MACHINE_IMAGE_SRC: string | undefined = "/images/meet-stackd-machine.jpg";
 
 const SPECS = [
   { label: "Display", value: "21.5\" Touchscreen" },
@@ -41,7 +41,7 @@ export function MeetStackd() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.9, delay: 0.1, ease: EASE }}
-          className="relative mx-auto mt-12 aspect-[3/4] w-full max-w-md"
+          className="relative mx-auto mt-12 aspect-[4/5] w-full max-w-md"
         >
           <div
             aria-hidden="true"
