@@ -5,11 +5,22 @@ things that should stay consistent across future sessions and shouldn't be
 silently re-litigated by whoever (or whatever) works on this next. Add to it
 as new standing decisions are made; don't delete history, mark it superseded.
 
-## The trust test (2026-08-05) — governs every design decision from here on
+## STACKD Design Principles (2026-08-05) — governs every design decision from here on
 
-The single question every design decision must answer: **"Does this make
-STACKD feel more trustworthy?"** Not more exciting, not more animated, not
-more modern. Venue owners are trusting STACKD to install equipment in their
+1. Trust before excitement.
+2. Clarity before creativity.
+3. Premium through restraint.
+4. Every animation must have a purpose.
+5. Every section answers one question.
+6. Never exaggerate capability.
+7. Design for decision-makers, not designers.
+8. Hospitality first.
+9. Less, but better.
+10. If something feels unnecessary, remove it.
+
+The root test behind all ten: **"Does this make STACKD feel more
+trustworthy?"** Not more exciting, not more animated, not more modern.
+Venue owners are trusting STACKD to install equipment in their
 businesses — the site's job is to reinforce professionalism, reliability,
 and premium execution, in that order, before novelty.
 
@@ -17,9 +28,10 @@ In practice:
 - **Animation must be purposeful, never decorative-for-its-own-sake.** Motion
   should clarify hierarchy or sequence (entrance reveals, scroll-linked
   emphasis), not perform. Be suspicious of any animation whose only job is
-  to look lively — e.g. continuous/infinite motion (auto-scrolling
-  marquees, looping loaders) that isn't tied to a real status or action is
-  a candidate for removal or replacement with something quieter.
+  to look lively — continuous/infinite motion that isn't tied to a real
+  status or action is a candidate for removal. (Precedent: the homepage's
+  auto-scrolling proof marquee was removed for exactly this reason and
+  replaced with a static row — see `src/components/proof-row.tsx`.)
 - **Claims stay honest and specific.** No hype language, no vague
   superlatives — concrete, verifiable statements over excitement.
 - **Restraint reads as competence.** Generous whitespace, clear hierarchy,
