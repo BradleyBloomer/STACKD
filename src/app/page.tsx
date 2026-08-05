@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { HeroCinematic } from "@/components/hero-cinematic";
+import { HeroProduct } from "@/components/hero-product";
 import { HandlesSplit } from "@/components/handles-split";
 import { ProofMarquee } from "@/components/proof-marquee";
 
@@ -27,7 +27,7 @@ const ROADMAP = [
 export default function Home() {
   return (
     <>
-      <HeroCinematic />
+      <HeroProduct />
 
       <section className="border-t border-white/10 bg-offwhite text-charcoal">
         <div className="mx-auto max-w-7xl px-6 py-24 md:px-10">
