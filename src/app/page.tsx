@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { HeroProduct } from "@/components/hero-product";
 import { MeetStackd } from "@/components/meet-stackd";
+import { HowItWorksDemo } from "@/components/how-it-works-demo";
 import { HandlesSplit } from "@/components/handles-split";
 import { ProofRow } from "@/components/proof-row";
 
@@ -31,6 +32,8 @@ export default function Home() {
       <HeroProduct />
 
       <MeetStackd />
+
+      <HowItWorksDemo />
 
       <section className="border-t border-white/10 bg-offwhite text-charcoal">
         <div className="mx-auto max-w-7xl px-6 py-24 md:px-10">
