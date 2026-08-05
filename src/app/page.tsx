@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { HeroStack } from "@/components/hero-stack";
+import { HandlesSplit } from "@/components/handles-split";
+import { ProofMarquee } from "@/components/proof-marquee";
 
 const ROADMAP = [
   {
     index: "001",
     status: "Live now",
-    label: "Smart vape vending",
+    label: "Premium vape vending",
     detail: "Premium hospitality venues — bars, restaurants, clubs, hotels.",
   },
   {
@@ -34,10 +36,10 @@ export default function Home() {
             We build and operate automated retail.
           </h1>
           <p className="mt-8 max-w-lg font-sans text-lg leading-relaxed text-offwhite/70">
-            STACKD installs, stocks, and manages smart vending infrastructure
-            in premium venues — starting with vape vending in hospitality,
-            built to scale into any category, any venue, anywhere there&apos;s
-            foot traffic.
+            STACKD partners with premium hospitality venues to deploy smart,
+            remotely-monitored retail technology. Our first automated retail
+            solution focuses on premium vape products — infrastructure built
+            to scale into new categories over time.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link
@@ -90,6 +92,19 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="border-t border-white/10 bg-charcoal">
+        <div className="mx-auto max-w-7xl px-6 py-24 md:px-10">
+          <p className="font-mono text-xs uppercase tracking-widest text-teal-light">
+            The Partnership
+          </p>
+          <div className="mt-16">
+            <HandlesSplit />
+          </div>
+        </div>
+      </section>
+
+      <ProofMarquee />
 
       <section className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 py-24 text-center md:px-10">
