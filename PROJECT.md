@@ -134,6 +134,19 @@ above, with a genuine editorial "breathing room" beat added deliberately
 proposition — see `src/components/` for whichever pause-section component
 exists once built.
 
+### Reference phase closed — refine STACKD as STACKD (2026-08-05)
+
+The creative direction is now considered established. **No more external
+reference sites from here** (no more Rovano, Aeline, or anything new) —
+every decision from this point is judged against the principles and
+narrative already recorded in this file, not against another company's
+website. The goal has shifted from inspiration to **consistency**: making
+the existing work exceptional rather than different. Effort now goes into
+refining typography, spacing, rhythm, photography, and interaction within
+what's already built — not introducing new ideas, patterns, or sections.
+If a change can't be justified by something already written down here, it
+probably shouldn't happen.
+
 ## Hero product render
 
 The homepage hero is a flexible two-column layout (copy left, image slot
