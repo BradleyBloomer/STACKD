@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { StackdIcon } from "./stackd-icon";
+import { StackdIconReversed } from "./stackd-icon-reversed";
 
 const NAV_LINKS = [
   { href: "/how-it-works", label: "How It Works" },
@@ -21,12 +21,13 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-6 py-16 md:px-10">
         <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
-            <div className="flex items-center gap-3 font-display text-lg font-medium tracking-tight text-offwhite">
-              <span className="flex h-8 w-8 items-center justify-center rounded-md bg-offwhite p-1.5">
-                <StackdIcon className="h-full w-full" />
-              </span>
+            <Link
+              href="/"
+              className="flex items-center gap-2.5 font-display text-lg font-medium tracking-tight text-offwhite transition-opacity hover:opacity-80"
+            >
+              <StackdIconReversed className="h-7 w-auto" />
               STACKD
-            </div>
+            </Link>
             <p className="mt-4 font-sans text-sm leading-relaxed text-offwhite/60">
               South African automated retail infrastructure. Built to scale
               beyond a single category, a single venue type, or a single
