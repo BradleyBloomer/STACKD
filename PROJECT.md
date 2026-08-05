@@ -147,6 +147,17 @@ what's already built — not introducing new ideas, patterns, or sections.
 If a change can't be justified by something already written down here, it
 probably shouldn't happen.
 
+### Homepage structure frozen (2026-08-05)
+
+The homepage's overall structure (five sections, their order, and the
+Curiosity → Understanding → Admiration → Commercial confidence → Action
+arc) is now considered **frozen** — change it only if review surfaces a
+genuine issue, not to try a new idea. Focus shifts to the remaining pages
+(How It Works, Why STACKD, About, Contact, legal placeholders): they must
+reuse the homepage's established design system, components, motion
+language, and pacing philosophy rather than inventing new ones. **The
+homepage is now the benchmark every other page is judged against.**
+
 ## Hero product render
 
 The homepage hero is a flexible two-column layout (copy left, image slot
