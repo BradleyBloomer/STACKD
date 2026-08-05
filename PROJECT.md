@@ -203,25 +203,34 @@ same physical object. Real reference photos of the actual D02 Pro unit
 supplied 2026-08-05 and independently confirm the 850×550×220mm figures
 already in use — no correction needed.
 
-**Rendering workflow — clean division of responsibility (2026-08-05):**
+**Rendering workflow — the standing two-stage review (2026-08-05).** Every
+future machine render, hero or otherwise, is judged in this order:
 
-AI image generation is responsible for:
-- Product proportions
+*Stage 1 — Hardware Review* (judge the render on this, and only this):
+- Cabinet proportions
+- Silhouette
 - Materials
 - Lighting
 - Composition
 - Environment
 - Screen mood
+- Payment terminal accuracy
+- Overall realism
 
-Post-production is responsible for:
-- Official STACKD branding
-- Logo placement
-- Any screen graphics requiring exact brand fidelity
-- Final colour balancing if required
+If Stage 1 passes, **the render is kept** — full stop. Never reject or ask
+for a regenerate because of Stage 2 issues.
 
-**Do not regenerate an otherwise-successful render solely because the logo
-is imperfect.** Branding is a production asset applied after generation,
-not a prompting problem to solve. The official logo is already extracted
-as clean vector source in `brand-source/originals/` (icon, wordmark, full
-lockup), never redrawn, ready to composite in — same technique used for
-the hero (see the reversed-icon work earlier in the project history).
+*Stage 2 — Production* (fixed afterward, always, regardless of what the
+model drew):
+- Official STACKD logo
+- Screen branding
+- Final colour balancing if needed
+- Export for web
+
+Branding is a production asset applied after generation, not a prompting
+problem to solve — we don't regenerate otherwise-successful renders
+because the AI invented its own branding. The official logo is already
+extracted as clean vector source in `brand-source/originals/` (icon,
+wordmark, full lockup), never redrawn, ready to composite in — same
+technique used for the hero (see the reversed-icon work earlier in the
+project history).
