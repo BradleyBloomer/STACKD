@@ -5,6 +5,32 @@ things that should stay consistent across future sessions and shouldn't be
 silently re-litigated by whoever (or whatever) works on this next. Add to it
 as new standing decisions are made; don't delete history, mark it superseded.
 
+## The trust test (2026-08-05) — governs every design decision from here on
+
+The single question every design decision must answer: **"Does this make
+STACKD feel more trustworthy?"** Not more exciting, not more animated, not
+more modern. Venue owners are trusting STACKD to install equipment in their
+businesses — the site's job is to reinforce professionalism, reliability,
+and premium execution, in that order, before novelty.
+
+In practice:
+- **Animation must be purposeful, never decorative-for-its-own-sake.** Motion
+  should clarify hierarchy or sequence (entrance reveals, scroll-linked
+  emphasis), not perform. Be suspicious of any animation whose only job is
+  to look lively — e.g. continuous/infinite motion (auto-scrolling
+  marquees, looping loaders) that isn't tied to a real status or action is
+  a candidate for removal or replacement with something quieter.
+- **Claims stay honest and specific.** No hype language, no vague
+  superlatives — concrete, verifiable statements over excitement.
+- **Restraint reads as competence.** Generous whitespace, clear hierarchy,
+  controlled color use (see "don't overuse teal") — a site that feels
+  calm and in control is itself a trust signal.
+- **Predictability over surprise.** Interactions should behave as expected;
+  nothing jarring, nothing that draws attention to itself as a "trick."
+  Always respect prefers-reduced-motion.
+- When a new idea is exciting but doesn't clearly pass the trust test, flag
+  it rather than build it silently.
+
 ## Brand & product naming (2026-08-05)
 
 - **STACKD is the company brand.**
