@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { HeroStack } from "@/components/hero-stack";
+import { HeroCinematic } from "@/components/hero-cinematic";
 import { HandlesSplit } from "@/components/handles-split";
 import { ProofMarquee } from "@/components/proof-marquee";
 
@@ -27,40 +27,7 @@ const ROADMAP = [
 export default function Home() {
   return (
     <>
-      <section className="mx-auto flex max-w-7xl flex-col gap-16 px-6 pb-24 pt-16 md:px-10 md:pt-24 lg:flex-row lg:items-end lg:gap-8">
-        <div className="max-w-2xl">
-          <p className="font-mono text-xs uppercase tracking-widest text-teal-light">
-            Automated Retail, Engineered
-          </p>
-          <h1 className="mt-6 font-display text-5xl font-medium leading-[1.05] tracking-tight text-offwhite sm:text-6xl lg:text-7xl">
-            We build and operate automated retail.
-          </h1>
-          <p className="mt-8 max-w-lg font-sans text-lg leading-relaxed text-offwhite/70">
-            STACKD partners with premium hospitality venues to deploy smart,
-            remotely-monitored retail technology. Our first automated retail
-            solution focuses on premium vape products — infrastructure built
-            to scale into new categories over time.
-          </p>
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <Link
-              href="/partner"
-              className="rounded-full bg-teal px-7 py-3.5 font-mono text-xs uppercase tracking-widest text-offwhite transition-colors hover:bg-teal-light"
-            >
-              Partner With Us
-            </Link>
-            <Link
-              href="/how-it-works"
-              className="rounded-full border border-white/20 px-7 py-3.5 font-mono text-xs uppercase tracking-widest text-offwhite/80 transition-colors hover:border-white/40 hover:text-offwhite"
-            >
-              How It Works
-            </Link>
-          </div>
-        </div>
-
-        <div className="w-full lg:flex-1">
-          <HeroStack />
-        </div>
-      </section>
+      <HeroCinematic />
 
       <section className="border-t border-white/10 bg-offwhite text-charcoal">
         <div className="mx-auto max-w-7xl px-6 py-24 md:px-10">
