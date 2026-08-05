@@ -212,7 +212,7 @@ export function HowItWorksDemo() {
             <p className="font-mono text-xs uppercase tracking-widest text-teal-light">
               How It Works
             </p>
-            <h2 className="mt-4 max-w-md font-display text-3xl font-medium leading-[1.1] tracking-tight text-offwhite sm:text-4xl">
+            <h2 className="mt-4 max-w-md font-display text-4xl font-medium leading-[1.05] tracking-tight text-offwhite sm:text-5xl">
               How does someone buy from STACKD?
             </h2>
 

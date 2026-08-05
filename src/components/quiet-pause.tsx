@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
 import { StackdIconReversed } from "./stackd-icon-reversed";
 
 // A deliberate photographic beat between the product demo and the business
@@ -9,9 +12,17 @@ import { StackdIconReversed } from "./stackd-icon-reversed";
 const PAUSE_IMAGE_SRC: string | undefined = undefined;
 
 export function QuietPause() {
+  const reduceMotion = useReducedMotion();
+
   return (
     <section className="relative border-t border-white/10 bg-charcoal">
-      <div className="relative mx-auto aspect-[16/10] w-full max-w-6xl overflow-hidden sm:aspect-[21/9]">
+      <motion.div
+        initial={reduceMotion ? false : { opacity: 0, scale: 1.02 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, margin: "-120px" }}
+        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+        className="relative mx-auto aspect-[16/10] w-full max-w-6xl overflow-hidden sm:aspect-[21/9]"
+      >
         {PAUSE_IMAGE_SRC ? (
           <Image
             src={PAUSE_IMAGE_SRC}
@@ -28,7 +39,7 @@ export function QuietPause() {
             </p>
           </div>
         )}
-      </div>
+      </motion.div>
     </section>
   );
 }
