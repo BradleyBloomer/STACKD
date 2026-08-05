@@ -15,9 +15,10 @@ door position, and terminal placement.
 
 A wall-mounted premium smart vending machine cabinet, matte black
 powder-coated finish, premium industrial design. **Compact and wide rather
-than tall or kiosk-like — proportions closely matching the real Reyeah D02
-Pro** (this was corrected 2026-08-05; earlier drafts under-specified this
-and risked reading as a tall kiosk). Mounted flush against a wall — no
+than tall or kiosk-like — approximately 850mm tall × 550mm wide × 220mm
+deep, matching the real Reyeah D02 Pro** (this was corrected 2026-08-05;
+earlier drafts under-specified this and risked reading as a tall kiosk).
+Mounted flush against a wall — no
 floor stand, no pedestal, no legs, no visible mounting brackets. A 21.5-inch
 vertical touchscreen dominates the upper portion of the front face,
 displaying a subtle, premium branded idle/attract screen: a centered
@@ -89,35 +90,86 @@ the unit.
 
 ---
 
-## Meet STACKD section — premium editorial product appreciation
+## Meet STACKD section — premium editorial product appreciation (final)
 
 For the homepage's "Meet STACKD" section (`src/components/meet-stackd.tsx`)
 — explicitly **not** the hero image. The hero is a dramatic launch moment;
 this one is quieter, closer to a catalogue photograph than a marketing
-shot. Product appreciation, not spectacle.
+shot. Product appreciation, not spectacle. User-authored final version
+(2026-08-05), run with a real D02 Pro reference photo attached:
 
-> [Shared machine description above.] Photographed as a premium industrial
-> design catalogue image — the tone of a Bang & Olufsen or Leica product
-> catalogue, not a product launch campaign. The machine is mounted naturally
-> on a dark architectural wall — matte charcoal, subtle real-world texture,
-> no studio artificiality. Lighting is soft and directional, from one side,
-> revealing the texture of the matte black powder-coated finish and the
-> precision of the cabinet's seams and edges — **no dramatic rim-light glow,
-> no theatrical spotlighting, no lens flare.** This should look like it was
-> lit to show the object honestly, not to create excitement. Camera:
-> eye-level, straight-on or very slight angle (~5–10°), longer lens look
-> (85mm equivalent) for minimal distortion, so the proportions read
-> accurately. Generous negative space around the machine on all sides — the
-> wall itself is a real part of the composition, not empty space to crop
-> out. Sharp focus throughout the cabinet, natural depth of field falloff
-> only on the wall behind it. Photorealistic, calm, quiet, considered. No
-> people, no clutter, no watermarks, no marketing copy or overlay text in
-> the image itself.
+> Use the attached reference image of the real Reyeah D02 Pro as the
+> hardware reference. Preserve the real cabinet's proportions, layout and
+> silhouette exactly, while replacing all Reyeah branding with STACKD
+> branding.
+>
+> Create a photorealistic editorial product photograph of the STACKD
+> wall-mounted automated retail machine. This is not a dramatic hero image
+> or concept art. It should feel like a premium industrial design catalogue
+> from Leica, Bang & Olufsen or Apple Hardware.
+>
+> The cabinet is compact, dense and architectural. It should closely match
+> the real Reyeah D02 Pro dimensions (approximately 850mm tall × 550mm wide
+> × 220mm deep). Avoid making the machine tall, narrow or kiosk-like. The
+> proportions should communicate a real manufactured commercial product.
+>
+> The machine is mounted flush against a matte charcoal architectural wall
+> with no stand, no pedestal, no legs, no visible mounting brackets and no
+> cables.
+>
+> The cabinet has a premium matte black powder-coated finish with subtle
+> texture. Panel gaps are tight and precise. Rounded corners are restrained.
+> It should feel engineered rather than futuristic.
+>
+> The 21.5-inch vertical touchscreen occupies the upper portion of the
+> cabinet exactly like the real D02 Pro. Display a clean idle screen using
+> the official STACKD logo, followed by: STACKD / Premium Automated Retail
+> / a thin horizontal teal accent line / Tap to Begin / Age Verification
+> Required. The interface should be extremely minimal with a restrained
+> teal (#1E82A5) accent. Do not invent additional UI elements, dashboards,
+> icons or graphics.
+>
+> Branding on the cabinet should be subtle. Place the official STACKD cube
+> logo and wordmark in the upper-left corner of the cabinet face exactly as
+> a real manufacturer would. Do not invent alternative logo treatments or
+> place branding elsewhere.
+>
+> The lower-left contains the PUSH collection door.
+>
+> The lower-right contains a compact flush-mounted contactless payment
+> terminal approximately the height of a modern smartphone. It has a small
+> black display and NFC tap symbol only. No keypad, no coloured buttons, no
+> PIN pad, no oversized handheld POS terminal. It should look integrated
+> into the cabinet, not attached afterwards.
+>
+> Lighting should be soft and directional from one side, revealing the
+> cabinet's materials and edges naturally. No dramatic rim lights, lens
+> flares, smoke, blue glow, excessive reflections or cinematic effects.
+>
+> The machine should occupy roughly 70% of the composition vertically,
+> allowing viewers to appreciate the hardware. Include generous but
+> balanced negative space around it. Camera should be eye-level with a very
+> slight three-quarter angle (5–10°) using an 85mm lens look to minimise
+> distortion and accurately represent the cabinet's proportions.
+>
+> The final image should be indistinguishable from a real commercial
+> product photograph. It should communicate precision manufacturing,
+> premium industrial design and trust — not futuristic technology or
+> marketing spectacle.
 
 ---
 
-## Negative prompt / exclusions (apply to all of the above)
+## Negative prompt / exclusions
 
-Reyeah logo or branding, any text other than STACKD, floor stands, pedestals,
-legs, visible cables or mounting brackets, generic or cartoonish vending
-machine shapes, other product brands, people, watermarks, low detail.
+**General (hero concepts 1–3):** Reyeah logo or branding, any text other
+than STACKD, floor stands, pedestals, legs, visible cables or mounting
+brackets, generic or cartoonish vending machine shapes, other product
+brands, people, watermarks, low detail.
+
+**Meet STACKD (final, user-authored):** tall kiosk proportions,
+freestanding machine, floor stand, pedestal, visible mounting brackets,
+visible cables, Reyeah branding, invented logos, incorrect STACKD logo,
+keypad payment terminals, coloured POS buttons, oversized card readers,
+fake UI dashboards, glowing sci-fi effects, people, watermarks, clutter,
+exaggerated reflections, concept art, cartoon styling, speculative
+industrial design.

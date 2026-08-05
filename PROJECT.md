@@ -188,3 +188,14 @@ the machine's underlying operating system — the real customer interaction
 flow (Welcome → Age Verification → Product Selection → Payment → Dispensing
 → Thank You) should be presented honestly wherever it's described (planned
 home: the How It Works page).
+
+**Real hardware facts (confirmed 2026-08-05):** cabinet is approximately
+850mm tall × 550mm wide × 220mm deep — compact and wide, not tall or
+kiosk-like. Payment terminal is compact contactless-only (NFC tap symbol,
+small display) with **no keypad, no PIN pad, no coloured buttons** — a
+common early mistake was describing it with a keypad; it doesn't have one.
+Two renders now exist in the prompt doc: the dramatic hero concepts, and a
+separate calmer "Meet STACKD" editorial/catalogue-style prompt for
+`src/components/meet-stackd.tsx` — the two must stay tonally distinct
+(launch drama vs. quiet product appreciation) even though they render the
+same physical object.
