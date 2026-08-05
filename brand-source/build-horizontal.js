@@ -5,8 +5,8 @@ function extractPaths(file) {
   return [...svg.matchAll(/<path[\s\S]*?\/>/g)].map((m) => m[0]).join("\n");
 }
 
-const iconPaths = extractPaths("icon-color.svg");
-const wordmarkPaths = extractPaths("wordmark-color.svg");
+const iconPaths = extractPaths("originals/icon-original.svg");
+const wordmarkPaths = extractPaths("originals/wordmark-original.svg");
 
 const scale = 100 / 258.977;
 const iconW = 227.527 * scale;
@@ -32,5 +32,5 @@ ${wordmarkPaths}
 </svg>
 `;
 
-fs.writeFileSync("horizontal-color.svg", svg);
-console.log("Written horizontal-color.svg", { totalW, wmX, wmY, wmW, wmH, iconW });
+fs.writeFileSync("derivatives/horizontal-color.svg", svg);
+console.log("Written derivatives/horizontal-color.svg", { totalW, wmX, wmY, wmW, wmH, iconW });

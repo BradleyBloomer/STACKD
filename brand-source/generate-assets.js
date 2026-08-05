@@ -11,7 +11,7 @@ const fs = require("fs");
 const OFFWHITE = { r: 246, g: 242, b: 234, alpha: 1 };
 
 async function main() {
-  const iconSrc = fs.readFileSync("icon-color.svg");
+  const iconSrc = fs.readFileSync("originals/icon-original.svg");
 
   // Square favicon/app icon sizes: icon centered on an off-white square canvas
   for (const size of [32, 48, 192, 512]) {
@@ -32,7 +32,7 @@ async function main() {
         },
       ])
       .png()
-      .toFile(`favicon-${size}.png`);
+      .toFile(`derivatives/favicon-${size}.png`);
   }
 
   // Apple touch icon: opaque off-white background (iOS masks corners itself)
@@ -55,7 +55,7 @@ async function main() {
         },
       ])
       .png()
-      .toFile("apple-touch-icon.png");
+      .toFile("derivatives/apple-touch-icon.png");
   }
 
   // Social avatar: 1080x1080, icon centered on off-white square with generous padding
@@ -78,7 +78,7 @@ async function main() {
         },
       ])
       .png()
-      .toFile("social-avatar-1080.png");
+      .toFile("derivatives/social-avatar-1080.png");
   }
 
   console.log("Done.");
