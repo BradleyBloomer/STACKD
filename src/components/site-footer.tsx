@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { StackMark } from "./stack-mark";
+import { StackdIcon } from "./stackd-icon";
 
 const NAV_LINKS = [
   { href: "/how-it-works", label: "How It Works" },
@@ -22,7 +22,9 @@ export function SiteFooter() {
         <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
             <div className="flex items-center gap-3 font-display text-lg font-medium tracking-tight text-offwhite">
-              <StackMark />
+              <span className="flex h-8 w-8 items-center justify-center rounded-md bg-offwhite p-1.5">
+                <StackdIcon className="h-full w-full" />
+              </span>
               STACKD
             </div>
             <p className="mt-4 font-sans text-sm leading-relaxed text-offwhite/60">

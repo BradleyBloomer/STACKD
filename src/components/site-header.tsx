@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { StackMark } from "./stack-mark";
+import { StackdIcon } from "./stackd-icon";
 
 const NAV_LINKS = [
   { href: "/how-it-works", label: "How It Works" },
@@ -21,7 +21,9 @@ export function SiteHeader() {
           href="/"
           className="flex items-center gap-3 font-display text-lg font-medium tracking-tight text-offwhite"
         >
-          <StackMark />
+          <span className="flex h-8 w-8 items-center justify-center rounded-md bg-offwhite p-1.5">
+            <StackdIcon className="h-full w-full" />
+          </span>
           STACKD
         </Link>
 
