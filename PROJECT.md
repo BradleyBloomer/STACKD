@@ -81,6 +81,31 @@ and explicitly (e.g. "Our first automated retail solution focuses on
 premium vape products") — never implying multiple product categories are
 already live.
 
+## Homepage content discipline (2026-08-05)
+
+Every homepage section must reinforce one of exactly five questions. If a
+section doesn't clearly answer one of these, it doesn't belong on the
+homepage:
+
+1. What is STACKD?
+2. What is the machine?
+3. How does it work?
+4. Why should a venue partner with STACKD?
+5. How do we get started?
+
+**No future-category teasing.** STACKD is currently focused on one thing —
+premium automated vape retail for hospitality venues. Do not hint at future
+product categories (snacks, drinks, electronics, etc.) or future venue
+types (hotels, airports, universities) on the homepage. That story is
+earned over time, not claimed in advance. This retired the homepage's
+former "Built to Scale" roadmap section entirely (no replacement — the
+five-question filter doesn't require one per question, and forcing a
+section to exist just to cover a question is itself a violation of
+"subtraction as the default" above). This is a stricter, homepage-specific
+application of the "no multiple models/categories" rule under Brand &
+product naming below — that rule was about product naming; this one is
+about not previewing the roadmap at all yet, anywhere on the homepage.
+
 ## Hero product render
 
 The homepage hero is a flexible two-column layout (copy left, image slot
