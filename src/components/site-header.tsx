@@ -21,7 +21,7 @@ export function SiteHeader() {
           href="/"
           className="flex items-center gap-2.5 font-display text-lg font-medium tracking-tight text-offwhite transition-opacity hover:opacity-80"
         >
-          <StackdIconReversed className="h-6 w-auto md:h-7" />
+          <StackdIconReversed className="h-7 w-auto md:h-8" />
           STACKD
         </Link>
 

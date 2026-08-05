@@ -25,7 +25,7 @@ export function SiteFooter() {
               href="/"
               className="flex items-center gap-2.5 font-display text-lg font-medium tracking-tight text-offwhite transition-opacity hover:opacity-80"
             >
-              <StackdIconReversed className="h-7 w-auto" />
+              <StackdIconReversed className="h-8 w-auto" />
               STACKD
             </Link>
             <p className="mt-4 font-sans text-sm leading-relaxed text-offwhite/60">
