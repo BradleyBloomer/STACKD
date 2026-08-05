@@ -198,4 +198,18 @@ Two renders now exist in the prompt doc: the dramatic hero concepts, and a
 separate calmer "Meet STACKD" editorial/catalogue-style prompt for
 `src/components/meet-stackd.tsx` — the two must stay tonally distinct
 (launch drama vs. quiet product appreciation) even though they render the
-same physical object.
+same physical object. Real reference photos of the actual D02 Pro unit
+(front 3/4 view, straight-on view, manufacturer dimension diagram) were
+supplied 2026-08-05 and independently confirm the 850×550×220mm figures
+already in use — no correction needed.
+
+**Logo workflow: compositing, not prompting (2026-08-05).** The official
+STACKD logo is a fixed production asset — already extracted as clean
+vector source in `brand-source/originals/` (icon, wordmark, full lockup),
+never redrawn. Do not rely on the image-generation model to reproduce it
+accurately on a render; treat whatever logo the model draws as a
+placeholder to be replaced in post via the same compositing technique used
+for the hero (see the reversed-icon work earlier in the project history).
+Hardware fidelity (proportions, materials, lighting) is the model's job;
+brand accuracy is always a post-production compositing pass using the real
+files, never a prompting problem to solve.
