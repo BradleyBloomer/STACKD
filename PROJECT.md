@@ -106,6 +106,34 @@ application of the "no multiple models/categories" rule under Brand &
 product naming below — that rule was about product naming; this one is
 about not previewing the roadmap at all yet, anywhere on the homepage.
 
+## Creative direction: premium product company, not premium startup (2026-08-05)
+
+STACKD is now explicitly being designed as a **premium product website**,
+not a startup landing page. Reference benchmarks: Aeline, Apple, Bang &
+Olufsen, Leica — but only for **discipline, rhythm, confidence, and
+restraint**. Never for structure, layout, or color. (Aeline specifically
+was checked and its actual structure — pricing tiers, testimonials, stat
+counters, blog previews, dashboard cards, feature-card grids — is the
+opposite of where STACKD is going; what's worth taking from it is the
+*feeling*: confident typography, generous whitespace, editorial rhythm
+between sections, premium photography, and the sense that every element
+was placed on purpose. Nothing should feel like it exists to fill space.)
+
+The measure of success: a visitor should think **"this feels like a
+premium company,"** not **"nice website."** They should leave remembering
+the product, not the website. This is the same spirit as the trust test
+and subtraction principles above, applied specifically to visual/editorial
+craft rather than messaging honesty.
+
+Concrete homepage consequence: sections are being reduced from the
+original build-out to a small number of exceptional ones (roughly
+Hero → How It Works → a quiet photographic pause → The Partnership →
+Closing CTA), each answering exactly one of the five homepage questions
+above, with a genuine editorial "breathing room" beat added deliberately
+(not as padding) between the interactive product demo and the business
+proposition — see `src/components/` for whichever pause-section component
+exists once built.
+
 ## Hero product render
 
 The homepage hero is a flexible two-column layout (copy left, image slot
