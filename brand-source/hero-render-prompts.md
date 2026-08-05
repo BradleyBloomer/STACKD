@@ -1,7 +1,8 @@
-# STACKD hero product render — AI image-generation prompts
+# STACKD product render prompts — AI image-generation
 
-Three concepts for the homepage hero machine render, based on the real Reyeah
-D02 Pro cabinet, rebranded as STACKD. Written 2026-08-05.
+Prompts for every machine render needed across the site, based on the real
+Reyeah D02 Pro cabinet, rebranded as STACKD. Written 2026-08-05, updated
+same day with a hardware correction (see shared description).
 
 **Before using these:** if your tool accepts an image + text prompt (ChatGPT
 GPT Image, Midjourney `/describe` + image prompt, etc.), attach a real photo
@@ -10,23 +11,29 @@ reliably reproduce one specific real product's exact proportions — a
 reference photo dramatically improves accuracy on silhouette, screen size,
 door position, and terminal placement.
 
-## Shared machine description (used in all three)
+## Shared machine description (used in every prompt below)
 
-A wall-mounted premium smart vending machine cabinet, matte black finish,
-premium industrial design. Tall vertical rectangular enclosure mounted flush
-against a wall — no floor stand, no pedestal, no legs, no visible mounting
-brackets. A large 21.5-inch vertical touchscreen dominates the upper
-two-thirds of the front face, displaying a premium branded idle/attract
-screen: a centered STACKD wordmark, the line "Premium Automated Retail"
-beneath it, and a subtle "Tap to Begin" prompt near the bottom, set against
-a dark screen background with a soft teal (#1E82A5) glow. This is the
-machine's idle screen before the normal purchase flow begins — not a claim
-that STACKD built custom software, just a branded attract screen. Lower-left: a rectangular
-push-to-open product collection door labeled "PUSH". Lower-right: a compact
-card payment terminal with a small screen and keypad, mounted to the
-cabinet's side panel. A small STACKD wordmark and geometric cube icon badge
-near the top of the cabinet, subtly embossed or backlit. No Reyeah branding,
-no other logos, no other brand names anywhere on the unit.
+A wall-mounted premium smart vending machine cabinet, matte black
+powder-coated finish, premium industrial design. **Compact and wide rather
+than tall or kiosk-like — proportions closely matching the real Reyeah D02
+Pro** (this was corrected 2026-08-05; earlier drafts under-specified this
+and risked reading as a tall kiosk). Mounted flush against a wall — no
+floor stand, no pedestal, no legs, no visible mounting brackets. A 21.5-inch
+vertical touchscreen dominates the upper portion of the front face,
+displaying a subtle, premium branded idle/attract screen: a centered
+STACKD wordmark using the approved official logo (not a redrawn or
+approximated version), the line "Premium Automated Retail" beneath it, and
+a understated "Tap to Begin" prompt near the bottom, set against a dark
+screen background with a soft teal (#1E82A5) glow — restrained, not
+theatrical. This is the machine's idle screen before the normal purchase
+flow begins — not a claim that STACKD built custom software, just a
+branded attract screen. Lower-left: a rectangular push-to-open product
+collection door labeled "PUSH". Lower-right: a **compact card payment
+terminal with no keypad** (tap/contactless only), mounted to the cabinet's
+side panel. A small STACKD wordmark and geometric cube icon badge near the
+top of the cabinet, subtly embossed or backlit, using the approved official
+logo. No Reyeah branding, no other logos, no other brand names anywhere on
+the unit.
 
 ---
 
@@ -82,7 +89,34 @@ no other logos, no other brand names anywhere on the unit.
 
 ---
 
-## Negative prompt / exclusions (apply to all three)
+## Meet STACKD section — premium editorial product appreciation
+
+For the homepage's "Meet STACKD" section (`src/components/meet-stackd.tsx`)
+— explicitly **not** the hero image. The hero is a dramatic launch moment;
+this one is quieter, closer to a catalogue photograph than a marketing
+shot. Product appreciation, not spectacle.
+
+> [Shared machine description above.] Photographed as a premium industrial
+> design catalogue image — the tone of a Bang & Olufsen or Leica product
+> catalogue, not a product launch campaign. The machine is mounted naturally
+> on a dark architectural wall — matte charcoal, subtle real-world texture,
+> no studio artificiality. Lighting is soft and directional, from one side,
+> revealing the texture of the matte black powder-coated finish and the
+> precision of the cabinet's seams and edges — **no dramatic rim-light glow,
+> no theatrical spotlighting, no lens flare.** This should look like it was
+> lit to show the object honestly, not to create excitement. Camera:
+> eye-level, straight-on or very slight angle (~5–10°), longer lens look
+> (85mm equivalent) for minimal distortion, so the proportions read
+> accurately. Generous negative space around the machine on all sides — the
+> wall itself is a real part of the composition, not empty space to crop
+> out. Sharp focus throughout the cabinet, natural depth of field falloff
+> only on the wall behind it. Photorealistic, calm, quiet, considered. No
+> people, no clutter, no watermarks, no marketing copy or overlay text in
+> the image itself.
+
+---
+
+## Negative prompt / exclusions (apply to all of the above)
 
 Reyeah logo or branding, any text other than STACKD, floor stands, pedestals,
 legs, visible cables or mounting brackets, generic or cartoonish vending
