@@ -11,15 +11,6 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 // "/hero/stackd-machine.png" — nothing else in this component needs to change.
 const PRODUCT_IMAGE_SRC: string | undefined = undefined;
 
-// Quiet, factual grounding for the product — a spec caption, not a feature
-// pitch. No cards, no icons: just what the hardware actually is.
-const SPECS = [
-  { label: "Display", value: "21.5\" Touchscreen" },
-  { label: "Finish", value: "Matte Black" },
-  { label: "Mount", value: "Wall-Mounted" },
-  { label: "Footprint", value: "Compact" },
-];
-
 export function HeroProduct() {
   const reduceMotion = useReducedMotion();
 
@@ -79,34 +70,13 @@ export function HeroProduct() {
           </motion.div>
         </div>
 
-        <div>
-          <motion.div
-            initial={reduceMotion ? false : { opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.25, ease: EASE }}
-          >
-            <ProductRenderSlot src={PRODUCT_IMAGE_SRC} />
-          </motion.div>
-
-          <motion.dl
-            {...fadeUp(0.6)}
-            className="mx-auto mt-8 max-w-xs border-t border-white/10"
-          >
-            {SPECS.map((spec) => (
-              <div
-                key={spec.label}
-                className="flex items-baseline justify-between border-b border-white/10 py-3"
-              >
-                <dt className="font-mono text-[10px] uppercase tracking-widest text-offwhite/35">
-                  {spec.label}
-                </dt>
-                <dd className="font-sans text-sm text-offwhite/70">
-                  {spec.value}
-                </dd>
-              </div>
-            ))}
-          </motion.dl>
-        </div>
+        <motion.div
+          initial={reduceMotion ? false : { opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.25, ease: EASE }}
+        >
+          <ProductRenderSlot src={PRODUCT_IMAGE_SRC} />
+        </motion.div>
       </div>
     </section>
   );

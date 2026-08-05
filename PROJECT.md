@@ -152,8 +152,26 @@ probably shouldn't happen.
 The homepage's overall structure (five sections, their order, and the
 Curiosity → Understanding → Admiration → Commercial confidence → Action
 arc) is now considered **frozen** — change it only if review surfaces a
-genuine issue, not to try a new idea. Focus shifts to the remaining pages
-(How It Works, Why STACKD, About, Contact, legal placeholders): they must
+genuine issue, not to try a new idea.
+
+**Update (2026-08-05, same day):** Review surfaced exactly such a genuine
+issue — the "Quiet Pause" section only worked with world-class photography
+in place; without it, it was an empty gap in the narrative, not a pause.
+Replaced with a redesigned **"Meet STACKD"** section (`src/components/meet-stackd.tsx`,
+not the original one retired earlier) at the same position (the
+"Admiration" beat, between How It Works and Partnership): the product
+render as the dominant visual, no headline pitch, no CTA, with the
+hardware's factual specs (Display, Finish, Mount, Footprint) presented as
+a quiet typographic caption underneath — no cards, no feature grid, no
+icon wall. Those same specs were removed from the Hero (where they'd just
+been added) to avoid repeating the same facts in two adjacent sections —
+the Hero stays lean (headline, copy, CTA, image only); "Meet STACKD" is
+now the sole home for grounding the product in facts. Current frozen
+order: Hero → How It Works → Meet STACKD → Partnership → Closing CTA.
+
+Focus shifts to the remaining pages
+(Why STACKD, About, Contact, legal placeholders — How It Works is done);
+they must
 reuse the homepage's established design system, components, motion
 language, and pacing philosophy rather than inventing new ones. **The
 homepage is now the benchmark every other page is judged against.**

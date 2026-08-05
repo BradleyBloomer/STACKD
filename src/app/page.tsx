@@ -1,6 +1,6 @@
 import { HeroProduct } from "@/components/hero-product";
 import { HowItWorksDemo } from "@/components/how-it-works-demo";
-import { QuietPause } from "@/components/quiet-pause";
+import { MeetStackd } from "@/components/meet-stackd";
 import { PartnershipStatement } from "@/components/partnership-statement";
 import { ClosingCta } from "@/components/closing-cta";
 
@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <HeroProduct />
       <HowItWorksDemo />
-      <QuietPause />
+      <MeetStackd />
       <PartnershipStatement />
       <ClosingCta />
     </>
