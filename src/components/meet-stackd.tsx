@@ -10,7 +10,7 @@ const SPECS = [
   "Compact Footprint",
 ];
 
-export function MeetStackdMini() {
+export function MeetStackd() {
   const reduceMotion = useReducedMotion();
 
   const fade = (delay: number) => ({
@@ -36,7 +36,7 @@ export function MeetStackdMini() {
           {...fade(0.1)}
           className="mt-6 font-display text-4xl font-medium leading-[1.05] tracking-tight text-offwhite sm:text-5xl lg:text-6xl"
         >
-          Meet STACKD MINI.
+          Meet STACKD.
         </motion.h2>
 
         <motion.p
@@ -50,11 +50,11 @@ export function MeetStackdMini() {
           {...fade(0.3)}
           className="mx-auto mt-8 max-w-xl font-sans text-base leading-relaxed text-offwhite/60"
         >
-          Premium automated vape retail designed for modern hospitality
-          venues. STACKD MINI brings the same remote-monitored, cashless,
-          always-on technology as our platform into a compact wall-mounted
-          footprint — built for bars, restaurants, and boutique venues where
-          space is at a premium.
+          The STACKD machine is a compact, wall-mounted vape vending
+          solution built for premium hospitality venues. Cashless
+          purchasing, built-in age verification, and remote monitoring —
+          fully managed by STACKD, so your team never has to think about
+          it.
         </motion.p>
 
         <motion.div
