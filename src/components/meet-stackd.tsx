@@ -57,18 +57,26 @@ export function MeetStackd() {
           it.
         </motion.p>
 
-        <motion.div
-          {...fade(0.42)}
-          className="mx-auto mt-14 flex max-w-2xl flex-wrap items-center justify-center gap-x-8 gap-y-4 border-t border-white/10 pt-8"
-        >
-          {SPECS.map((spec) => (
-            <span
-              key={spec}
-              className="font-mono text-[11px] uppercase tracking-widest text-offwhite/45"
-            >
-              {spec}
-            </span>
-          ))}
+        <motion.div {...fade(0.42)} className="mx-auto mt-20 max-w-2xl">
+          <div
+            aria-hidden="true"
+            className="mx-auto h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent"
+          />
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-3 gap-y-3">
+            {SPECS.map((spec, i) => (
+              <span key={spec} className="flex items-center gap-3">
+                <span className="font-mono text-[11px] font-medium uppercase tracking-[0.15em] text-offwhite/70 transition-colors hover:text-teal-light">
+                  {spec}
+                </span>
+                {i < SPECS.length - 1 && (
+                  <span
+                    aria-hidden="true"
+                    className="h-1 w-1 rounded-full bg-teal-light/40"
+                  />
+                )}
+              </span>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
