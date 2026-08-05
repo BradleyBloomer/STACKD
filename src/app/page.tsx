@@ -2,7 +2,7 @@ import Link from "next/link";
 import { HeroProduct } from "@/components/hero-product";
 import { MeetStackd } from "@/components/meet-stackd";
 import { HandlesSplit } from "@/components/handles-split";
-import { ProofMarquee } from "@/components/proof-marquee";
+import { ProofRow } from "@/components/proof-row";
 
 const ROADMAP = [
   {
@@ -74,7 +74,7 @@ export default function Home() {
         </div>
       </section>
 
-      <ProofMarquee />
+      <ProofRow />
 
       <section className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 py-24 text-center md:px-10">
