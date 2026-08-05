@@ -16,8 +16,12 @@ A wall-mounted premium smart vending machine cabinet, matte black finish,
 premium industrial design. Tall vertical rectangular enclosure mounted flush
 against a wall — no floor stand, no pedestal, no legs, no visible mounting
 brackets. A large 21.5-inch vertical touchscreen dominates the upper
-two-thirds of the front face, displaying a clean, minimal STACKD-branded
-interface with a teal (#1E82A5) accent glow. Lower-left: a rectangular
+two-thirds of the front face, displaying a premium branded idle/attract
+screen: a centered STACKD wordmark, the line "Premium Automated Retail"
+beneath it, and a subtle "Tap to Begin" prompt near the bottom, set against
+a dark screen background with a soft teal (#1E82A5) glow. This is the
+machine's idle screen before the normal purchase flow begins — not a claim
+that STACKD built custom software, just a branded attract screen. Lower-left: a rectangular
 push-to-open product collection door labeled "PUSH". Lower-right: a compact
 card payment terminal with a small screen and keypad, mounted to the
 cabinet's side panel. A small STACKD wordmark and geometric cube icon badge

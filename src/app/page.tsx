@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { HeroProduct } from "@/components/hero-product";
+import { MeetStackdMini } from "@/components/meet-stackd-mini";
 import { HandlesSplit } from "@/components/handles-split";
 import { ProofMarquee } from "@/components/proof-marquee";
 
@@ -28,6 +29,8 @@ export default function Home() {
   return (
     <>
       <HeroProduct />
+
+      <MeetStackdMini />
 
       <section className="border-t border-white/10 bg-offwhite text-charcoal">
         <div className="mx-auto max-w-7xl px-6 py-24 md:px-10">
