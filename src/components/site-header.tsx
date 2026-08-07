@@ -19,10 +19,17 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
         <Link
           href="/"
-          className="flex items-center gap-2.5 font-display text-lg font-medium tracking-tight text-offwhite transition-opacity hover:opacity-80"
+          className="flex items-center gap-2.5 transition-opacity hover:opacity-80"
         >
           <StackdIconReversed className="h-7 w-auto md:h-8" />
-          STACKD
+          <span className="flex flex-col items-start leading-none">
+            <span className="font-display text-lg font-medium tracking-tight text-offwhite">
+              STACKD
+            </span>
+            <span className="-mt-0.5 rounded-sm bg-white/10 px-1.5 py-0.5 font-mono text-[9px] uppercase tracking-wide text-offwhite/70">
+              Vending Machines
+            </span>
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
