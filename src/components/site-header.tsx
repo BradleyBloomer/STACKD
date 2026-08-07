@@ -26,7 +26,7 @@ export function SiteHeader() {
             <span className="font-display text-lg font-medium tracking-tight text-offwhite">
               STACKD
             </span>
-            <span className="-mt-0.5 rounded-sm bg-white/10 px-1.5 py-0.5 font-mono text-[9px] uppercase tracking-wide text-offwhite/70">
+            <span className="font-mono text-[9px] uppercase tracking-widest text-offwhite/50">
               Vending Machines
             </span>
           </span>
