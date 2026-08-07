@@ -244,7 +244,7 @@ export function HowItWorksDemo() {
 
           <div>
             <p className="font-mono text-sm uppercase tracking-widest text-teal-dark">
-              STACKD
+              STACKD Vending Machines
             </p>
             <h2 className="mt-4 max-w-md font-display text-5xl font-medium leading-[1.05] tracking-tight text-charcoal sm:text-6xl lg:text-7xl">
               Start your journey with STACKD.
