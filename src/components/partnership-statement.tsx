@@ -15,18 +15,18 @@ export function PartnershipStatement() {
   });
 
   return (
-    <section className="border-t border-white/10 bg-offwhite text-charcoal">
+    <section className="border-t border-white/10 bg-charcoal">
       <div className="mx-auto max-w-3xl px-6 py-32 text-center md:px-10">
         <motion.p
           {...fadeUp(0)}
-          className="font-mono text-xs uppercase tracking-widest text-teal-dark"
+          className="font-mono text-sm uppercase tracking-widest text-teal-light"
         >
           The Partnership
         </motion.p>
 
         <motion.h2
           {...fadeUp(0.1)}
-          className="mt-6 font-display text-4xl font-medium leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl"
+          className="mt-6 font-display text-5xl font-medium leading-[1.05] tracking-tight text-offwhite sm:text-6xl lg:text-7xl"
         >
           You provide the wall.
           <br />
@@ -35,7 +35,7 @@ export function PartnershipStatement() {
 
         <motion.p
           {...fadeUp(0.22)}
-          className="mx-auto mt-8 max-w-lg font-sans text-lg leading-relaxed text-charcoal/60"
+          className="mx-auto mt-8 max-w-lg font-sans text-lg leading-relaxed text-offwhite/70"
         >
           Installation, stocking, monitoring, and support — fully managed by
           STACKD, so your team never has to think about it.

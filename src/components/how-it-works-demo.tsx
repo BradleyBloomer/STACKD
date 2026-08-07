@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useRef, useState } from "react";
+import Image from "next/image";
 import {
   motion,
   AnimatePresence,
@@ -8,8 +9,20 @@ import {
   useMotionValueEvent,
   useReducedMotion,
 } from "framer-motion";
-import { StackdIconReversed } from "./stackd-icon-reversed";
+import { GeometricBackground } from "./geometric-background";
 
+// Screen rectangle as a percentage of the device cutout (the photo is a
+// transparent-background PNG of just the machine now — no cream margin —
+// so these percentages are relative to the cutout's own bounds), found
+// via pixel-luminance edge scanning (brand-source/composite-front-view.js).
+// This shot is close enough to front-on that no homography/keystone
+// correction is needed, unlike the hero/Meet-STACKD renders.
+const SCREEN_RECT = {
+  left: "17.95%",
+  top: "12.78%",
+  width: "65.10%",
+  height: "56.93%",
+};
 const STEPS = [
   "Tap to Begin",
   "Age Verification",
@@ -22,19 +35,21 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 
 function TapToBegin({ animate }: { animate: boolean }) {
   return (
-    <div className="flex h-full flex-col items-center justify-center gap-6">
-      <StackdIconReversed className="h-10 w-auto opacity-80" />
-      <div className="relative flex h-8 w-8 items-center justify-center">
+    <div className="flex h-full flex-col items-center justify-center gap-2">
+      <p className="font-display text-base font-medium tracking-tight text-offwhite/80">
+        STACKD
+      </p>
+      <div className="relative flex h-9 w-9 items-center justify-center">
         {animate && (
           <motion.span
-            className="absolute h-8 w-8 rounded-full border border-teal-light/50"
-            animate={{ scale: [1, 1.6], opacity: [0.6, 0] }}
+            className="absolute h-9 w-9 rounded-full border border-teal-light/50"
+            animate={{ scale: [1, 2.2], opacity: [0.6, 0] }}
             transition={{ duration: 1.8, repeat: Infinity, ease: "easeOut" }}
           />
         )}
         <span className="h-2 w-2 rounded-full bg-teal-light" />
       </div>
-      <p className="font-display text-lg font-medium text-offwhite">
+      <p className="font-display text-sm font-medium text-offwhite">
         Tap to Begin
       </p>
     </div>
@@ -43,14 +58,14 @@ function TapToBegin({ animate }: { animate: boolean }) {
 
 function AgeVerification() {
   return (
-    <div className="flex h-full flex-col items-center justify-center gap-5 px-8 text-center">
-      <p className="font-display text-lg font-medium text-offwhite">
+    <div className="flex h-full flex-col items-center justify-center gap-2.5 px-4 text-center">
+      <p className="font-display text-sm font-medium text-offwhite">
         Confirm Your Age
       </p>
-      <p className="font-sans text-xs text-offwhite/50">
+      <p className="font-sans text-[10px] leading-snug text-offwhite/50">
         You must be 18 or older to continue.
       </p>
-      <span className="rounded-full bg-teal px-5 py-2 font-mono text-[11px] uppercase tracking-widest text-offwhite">
+      <span className="rounded-full bg-teal px-3 py-1.5 font-mono text-[9px] uppercase tracking-widest text-offwhite">
         I&rsquo;m 18+
       </span>
     </div>
@@ -60,19 +75,15 @@ function AgeVerification() {
 function BrowseProducts() {
   const tiles = Array.from({ length: 6 });
   return (
-    <div className="flex h-full flex-col items-center justify-center gap-5 px-8">
-      <p className="font-display text-lg font-medium text-offwhite">
+    <div className="flex h-full flex-col items-center justify-center gap-2.5 px-4">
+      <p className="font-display text-sm font-medium text-offwhite">
         Browse Products
       </p>
-      <div className="grid grid-cols-3 gap-2">
+      <div className="grid grid-cols-3 gap-1.5">
         {tiles.map((_, i) => (
           <span
             key={i}
-            className={`h-8 w-8 rounded-md ${
-              i === 2
-                ? "bg-teal-light ring-2 ring-teal-light/40 ring-offset-2 ring-offset-charcoal"
-                : "bg-white/10"
-            }`}
+            className="h-5 w-5 rounded-sm bg-white/10 ring-teal-light/40 ring-offset-1 ring-offset-charcoal transition-colors duration-150 hover:bg-teal-light hover:ring-2"
           />
         ))}
       </div>
@@ -82,19 +93,19 @@ function BrowseProducts() {
 
 function SecurePayment({ animate }: { animate: boolean }) {
   return (
-    <div className="flex h-full flex-col items-center justify-center gap-6">
-      <p className="font-display text-lg font-medium text-offwhite">
+    <div className="flex h-full flex-col items-center justify-center gap-3">
+      <p className="font-display text-sm font-medium text-offwhite">
         Tap to Pay
       </p>
-      <div className="relative flex h-10 w-14 items-center justify-center rounded-md border border-white/15">
+      <div className="relative flex h-7 w-10 items-center justify-center rounded-md border border-white/15">
         {animate && (
           <motion.span
-            className="absolute -inset-2 rounded-lg border border-teal-light/40"
+            className="absolute -inset-1.5 rounded-lg border border-teal-light/40"
             animate={{ scale: [1, 1.2], opacity: [0.5, 0] }}
             transition={{ duration: 1.6, repeat: Infinity, ease: "easeOut" }}
           />
         )}
-        <span className="h-1 w-6 rounded-full bg-teal-light/60" />
+        <span className="h-0.5 w-4 rounded-full bg-teal-light/60" />
       </div>
     </div>
   );
@@ -102,12 +113,12 @@ function SecurePayment({ animate }: { animate: boolean }) {
 
 function CollectPurchase() {
   return (
-    <div className="flex h-full flex-col items-center justify-center gap-5">
-      <p className="font-display text-lg font-medium text-offwhite">
+    <div className="flex h-full flex-col items-center justify-center gap-2.5">
+      <p className="font-display text-sm font-medium text-offwhite">
         Collect Below
       </p>
-      <span className="text-offwhite/40">↓</span>
-      <span className="rounded-md border border-white/15 px-6 py-2 font-mono text-[11px] uppercase tracking-widest text-offwhite/60">
+      <span className="text-xs text-offwhite/40">↓</span>
+      <span className="rounded-md border border-white/15 px-3 py-1.5 font-mono text-[9px] uppercase tracking-widest text-offwhite/60">
         Push
       </span>
     </div>
@@ -136,11 +147,23 @@ export function HowItWorksDemo() {
     const section = sectionRef.current;
     if (!section) return;
 
-    const next = (activeStep + 1) % STEPS.length;
-    setActiveStep(next);
-
     const sectionTop = section.getBoundingClientRect().top + window.scrollY;
     const scrollableRange = section.offsetHeight - window.innerHeight;
+
+    if (activeStep === STEPS.length - 1) {
+      // Finished the cycle. Looping back to step 0 used to jump the scroll
+      // position back near the top of this (320vh) section — so finishing
+      // the demo meant re-scrolling through the whole thing again just to
+      // reach whatever comes next on the page. Move forward instead: past
+      // the end of the pinned range, into the next section.
+      window.scrollTo({ top: sectionTop + scrollableRange + 80, behavior: "auto" });
+      setActiveStep(0);
+      return;
+    }
+
+    const next = activeStep + 1;
+    setActiveStep(next);
+
     const targetProgress = (next + 0.5) / STEPS.length;
     const targetY = sectionTop + targetProgress * scrollableRange;
 
@@ -164,12 +187,13 @@ export function HowItWorksDemo() {
   return (
     <section
       ref={sectionRef}
-      className="relative border-t border-white/10 bg-charcoal"
+      className="relative border-t border-charcoal/10 bg-offwhite text-charcoal"
       style={{ height: "320vh" }}
     >
       <div className="sticky top-0 flex min-h-screen items-center overflow-hidden px-6 py-20 md:px-10">
-        <div className="mx-auto grid w-full max-w-6xl items-center gap-16 lg:grid-cols-[minmax(0,340px)_1fr]">
-          <div className="mx-auto w-full max-w-[300px]">
+        <GeometricBackground tone="light" />
+        <div className="relative mx-auto grid w-full max-w-6xl items-center gap-16 lg:grid-cols-[minmax(0,400px)_1fr]">
+          <div className="mx-auto w-full max-w-[360px]">
             <div
               role="button"
               tabIndex={0}
@@ -181,9 +205,19 @@ export function HowItWorksDemo() {
                   advanceStep();
                 }
               }}
-              className="relative aspect-[9/16] w-full cursor-pointer select-none rounded-xl border border-white/15 bg-[#08090a] p-2.5 outline-none focus-visible:ring-2 focus-visible:ring-teal-light/60"
+              className="relative aspect-[596/931] w-full cursor-pointer select-none rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-teal-light/60"
             >
-              <div className="relative h-full w-full overflow-hidden rounded-lg bg-charcoal">
+              <Image
+                src="/images/how-it-works-machine-v5.png"
+                alt="The STACKD machine's touchscreen"
+                fill
+                className="pointer-events-none object-contain"
+                sizes="360px"
+              />
+              <div
+                className="absolute overflow-hidden rounded-[3px]"
+                style={SCREEN_RECT}
+              >
                 {reduceMotion ? (
                   screens[activeStep]
                 ) : (
@@ -209,11 +243,11 @@ export function HowItWorksDemo() {
           </div>
 
           <div>
-            <p className="font-mono text-xs uppercase tracking-widest text-teal-light">
-              How It Works
+            <p className="font-mono text-sm uppercase tracking-widest text-teal-dark">
+              STACKD
             </p>
-            <h2 className="mt-4 max-w-md font-display text-4xl font-medium leading-[1.05] tracking-tight text-offwhite sm:text-5xl">
-              How does someone buy from STACKD?
+            <h2 className="mt-4 max-w-md font-display text-5xl font-medium leading-[1.05] tracking-tight text-charcoal sm:text-6xl lg:text-7xl">
+              Start your journey with STACKD.
             </h2>
 
             <ul className="mt-12 flex flex-col gap-5">
@@ -222,8 +256,8 @@ export function HowItWorksDemo() {
                   key={step}
                   className={`border-l-2 pl-5 font-display text-xl transition-colors duration-500 sm:text-2xl ${
                     i === activeStep
-                      ? "border-teal-light text-offwhite"
-                      : "border-white/10 text-offwhite/30"
+                      ? "border-teal text-charcoal"
+                      : "border-charcoal/10 text-charcoal/35"
                   }`}
                 >
                   {step}

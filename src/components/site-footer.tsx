@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { StackdIconReversed } from "./stackd-icon-reversed";
 
 const NAV_LINKS = [
   { href: "/how-it-works", label: "How It Works" },
@@ -23,15 +22,14 @@ export function SiteFooter() {
           <div className="max-w-sm">
             <Link
               href="/"
-              className="flex items-center gap-2.5 font-display text-lg font-medium tracking-tight text-offwhite transition-opacity hover:opacity-80"
+              className="font-display text-lg font-medium tracking-tight text-offwhite transition-opacity hover:opacity-80"
             >
-              <StackdIconReversed className="h-8 w-auto" />
               STACKD
             </Link>
             <p className="mt-4 font-sans text-sm leading-relaxed text-offwhite/60">
-              South African automated retail infrastructure. Built to scale
-              beyond a single category, a single venue type, or a single
-              city.
+              A South African automated retail company. Our first automated
+              retail solution focuses on premium vape products for
+              hospitality venues.
             </p>
           </div>
 

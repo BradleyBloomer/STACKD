@@ -20,14 +20,14 @@ export function ClosingCta() {
       <div className="mx-auto max-w-3xl px-6 py-32 text-center md:px-10">
         <motion.p
           {...fadeUp(0)}
-          className="font-mono text-xs uppercase tracking-widest text-teal-light"
+          className="font-mono text-sm uppercase tracking-widest text-teal-light"
         >
           Get Started
         </motion.p>
 
         <motion.h2
           {...fadeUp(0.1)}
-          className="mx-auto mt-6 max-w-2xl font-display text-4xl font-medium leading-[1.05] tracking-tight text-offwhite sm:text-5xl lg:text-6xl"
+          className="mx-auto mt-6 max-w-2xl font-display text-5xl font-medium leading-[1.05] tracking-tight text-offwhite sm:text-6xl lg:text-7xl"
         >
           Have a venue that could earn passive revenue?
         </motion.h2>

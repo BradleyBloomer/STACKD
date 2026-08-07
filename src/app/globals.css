@@ -40,3 +40,63 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
+
+/* Restrained slider: thin track, small teal dot — no dashboard styling. */
+.stackd-range {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 16px;
+  background: transparent;
+  cursor: pointer;
+}
+.stackd-range::-webkit-slider-runnable-track {
+  height: 2px;
+  background: rgba(14, 17, 19, 0.15);
+  border-radius: 9999px;
+}
+.stackd-range::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  margin-top: -7px;
+  border-radius: 9999px;
+  background: var(--color-teal);
+  border: 2px solid var(--color-offwhite);
+  box-shadow: 0 0 0 1px rgba(14, 17, 19, 0.12);
+  transition: box-shadow 0.15s ease;
+}
+.stackd-range::-moz-range-track {
+  height: 2px;
+  background: rgba(14, 17, 19, 0.15);
+  border-radius: 9999px;
+}
+.stackd-range::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  background: var(--color-teal);
+  border: 2px solid var(--color-offwhite);
+  box-shadow: 0 0 0 1px rgba(14, 17, 19, 0.12);
+}
+.stackd-range:focus {
+  outline: none;
+}
+.stackd-range:focus-visible::-webkit-slider-thumb,
+.stackd-range:focus-visible::-moz-range-thumb {
+  box-shadow: 0 0 0 4px rgba(30, 130, 165, 0.28);
+}
+
+/* Dark-background variant: light track, thumb border matches charcoal. */
+.stackd-range--dark::-webkit-slider-runnable-track {
+  background: rgba(246, 242, 234, 0.18);
+}
+.stackd-range--dark::-webkit-slider-thumb {
+  border-color: var(--color-charcoal);
+}
+.stackd-range--dark::-moz-range-track {
+  background: rgba(246, 242, 234, 0.18);
+}
+.stackd-range--dark::-moz-range-thumb {
+  border-color: var(--color-charcoal);
+}

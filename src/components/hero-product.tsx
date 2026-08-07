@@ -7,9 +7,9 @@ import { ProductRenderSlot } from "./product-render-slot";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-// Swap in the chosen render's path once one is picked, e.g.
-// "/hero/stackd-machine.png" — nothing else in this component needs to change.
-const PRODUCT_IMAGE_SRC: string | undefined = undefined;
+// Approved Stage 1 hardware render ("Black Wall"), Stage 2 (real logo +
+// idle screen) composited.
+const PRODUCT_IMAGE_SRC: string | undefined = "/images/hero-machine-v2.jpg";
 
 export function HeroProduct() {
   const reduceMotion = useReducedMotion();
@@ -21,30 +21,30 @@ export function HeroProduct() {
   });
 
   return (
-    <section className="relative overflow-hidden px-6 py-24 md:px-10 lg:py-32">
-      <GeometricBackground />
+    <section className="relative overflow-hidden border-t border-charcoal/10 bg-offwhite px-6 py-24 md:px-10 lg:py-32">
+      <GeometricBackground tone="light" />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-2 lg:gap-12">
         <div>
           <motion.p
             {...fadeUp(0.05)}
-            className="font-mono text-xs uppercase tracking-widest text-teal-light"
+            className="font-mono text-sm uppercase tracking-widest text-teal-dark"
           >
             Automated Retail, Engineered
           </motion.p>
 
           <motion.h1
             {...fadeUp(0.15)}
-            className="mt-6 font-display text-5xl font-medium leading-[1.03] tracking-tight text-offwhite sm:text-6xl lg:text-7xl"
+            className="mt-6 font-display text-6xl font-medium leading-[1.03] tracking-tight text-charcoal sm:text-7xl lg:text-8xl"
           >
             Smart Vending.
             <br />
-            <span className="text-teal-light">Built For Hospitality.</span>
+            <span className="text-teal-dark">Built For Hospitality.</span>
           </motion.h1>
 
           <motion.p
             {...fadeUp(0.28)}
-            className="mt-8 max-w-lg font-sans text-lg leading-relaxed text-offwhite/70"
+            className="mt-8 max-w-lg font-sans text-lg leading-relaxed text-charcoal/60"
           >
             STACKD installs, stocks, and manages smart vending technology in
             premium hospitality venues — cashless, age-verified, and
@@ -63,7 +63,7 @@ export function HeroProduct() {
             </Link>
             <Link
               href="/how-it-works"
-              className="rounded-full border border-white/20 px-7 py-3.5 font-mono text-xs uppercase tracking-widest text-offwhite/80 transition-colors hover:border-white/40 hover:text-offwhite"
+              className="rounded-full border border-charcoal/20 px-7 py-3.5 font-mono text-xs uppercase tracking-widest text-charcoal/70 transition-colors hover:border-charcoal/40 hover:text-charcoal"
             >
               How It Works
             </Link>

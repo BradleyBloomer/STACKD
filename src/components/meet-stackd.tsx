@@ -1,11 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { StackdIconReversed } from "./stackd-icon-reversed";
-
-// Approved Stage 1 hardware render, Stage 2 (logo + idle screen) composited.
-const MACHINE_IMAGE_SRC: string | undefined = "/images/meet-stackd-machine.jpg";
+import { StackdIconAssemble } from "./stackd-icon-assemble";
 
 const SPECS = [
   { label: "Display", value: "21.5\" Touchscreen" },
@@ -28,45 +24,34 @@ export function MeetStackd() {
 
   return (
     <section className="border-t border-white/10 bg-charcoal">
-      <div className="mx-auto max-w-4xl px-6 py-32 text-center md:px-10">
-        <motion.p
-          {...reveal(0)}
-          className="font-mono text-xs uppercase tracking-widest text-teal-light"
+      <div className="mx-auto max-w-3xl px-6 py-32 text-center md:px-10">
+        <StackdIconAssemble className="mx-auto h-32 w-auto sm:h-40" />
+
+        <motion.h2
+          {...reveal(0.65)}
+          className="mt-10 font-display text-6xl font-medium leading-[1] tracking-tight text-teal-light sm:text-7xl lg:text-8xl"
         >
           Meet STACKD
+        </motion.h2>
+
+        <motion.p
+          {...reveal(0.72)}
+          className="mt-6 font-display text-[2.7rem] font-medium leading-[1.03] tracking-tight text-offwhite sm:text-[3.375rem] lg:text-[4.05rem]"
+        >
+          Quiet by design.
         </motion.p>
 
-        <motion.div
-          initial={reduceMotion ? false : { opacity: 0, scale: 0.97 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.9, delay: 0.1, ease: EASE }}
-          className="relative mx-auto mt-12 aspect-[4/5] w-full max-w-md"
+        <motion.p
+          {...reveal(0.8)}
+          className="mx-auto mt-6 max-w-md font-sans text-lg leading-relaxed text-offwhite/70"
         >
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute left-1/2 top-1/2 h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-teal/10 blur-[90px]"
-          />
-          {MACHINE_IMAGE_SRC ? (
-            <Image
-              src={MACHINE_IMAGE_SRC}
-              alt="The STACKD machine"
-              fill
-              className="object-contain"
-              sizes="(min-width: 768px) 448px, 100vw"
-            />
-          ) : (
-            <div className="relative flex h-full flex-col items-center justify-center gap-4">
-              <StackdIconReversed className="h-16 w-auto opacity-50" />
-              <p className="font-mono text-[10px] uppercase tracking-widest text-offwhite/30">
-                Product render — coming soon
-              </p>
-            </div>
-          )}
-        </motion.div>
+          STACKD is built to work without asking for attention — a
+          compact, wall-mounted presence finished to the same standard as
+          the venues it serves.
+        </motion.p>
 
         <motion.dl
-          {...reveal(0.3)}
+          {...reveal(0.9)}
           className="mx-auto mt-14 grid max-w-md grid-cols-2 gap-x-8 gap-y-6 border-t border-white/10 pt-8 sm:grid-cols-4"
         >
           {SPECS.map((spec) => (

@@ -106,12 +106,15 @@ async function main() {
   const SC = screenInfo.channels;
 
   // Destination quad (inner active screen area), corners in order
-  // TL, TR, BR, BL — read from the coordinate-grid crops earlier.
+  // TL, TR, BR, BL — re-derived via pixel-luminance edge scanning (bezel
+  // is near-black, glass reads brighter) rather than visual estimation,
+  // after the original visually-estimated TR corner turned out to be off
+  // by ~47px (a real alignment bug, not a false complaint).
   const quad = [
-    [478, 358],
-    [690, 322],
-    [688, 828],
-    [478, 840],
+    [480, 358],
+    [691, 369],
+    [691, 828],
+    [480, 849],
   ];
   const srcRect = [
     [0, 0],
