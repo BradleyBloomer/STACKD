@@ -1155,3 +1155,74 @@ returning 404: `/why-stackd`, `/about`, `/contact`, `/privacy`, `/terms`.
 All 8 nav-linked routes (`/`, `/how-it-works`, `/why-stackd`, `/about`,
 `/contact`, `/partner`, `/privacy`, `/terms`) verified returning 200 via
 curl after the build. `tsc --noEmit` and `eslint` both clean.
+
+## Site deployed: GitHub + Vercel, custom domain live (2026-08-07)
+
+Homepage was declared done, so moved on to getting a real shareable
+link. Repo already existed locally (git history predates this — no init
+needed), just had no remote. Created `github.com/BradleyBloomer/STACKD`,
+pushed `main`, imported into Vercel (team "STACKD Vending"). Auto-deploy
+on every push to `main` is now live — no manual redeploy step.
+
+Connected the user's existing domain, `stackdvending.co.za` (registered
+at HostAfrica), by adding it in Vercel's Domains tab and setting the DNS
+records at HostAfrica: **A** `@` → `76.76.21.21`, **CNAME** `www` →
+`cname.vercel-dns.com`. HostAfrica's default template had pre-existing
+placeholder records for both (`@` A → `169.239.180.4`, `www` CNAME →
+the bare domain) which conflicted and had to be deleted first — Vercel
+showed "Invalid Configuration" until those were removed. Root domain
+308-redirects to `www`, which serves 200. Live URL:
+`https://stackdvending.co.za` (canonical is `www`).
+
+**Standing fact for future reference:** production URLs are
+`stackd-orpin-six.vercel.app` (Vercel-issued) and
+`stackdvending.co.za` / `www.stackdvending.co.za` (custom domain, both
+work). GitHub repo: `github.com/BradleyBloomer/STACKD`.
+
+## "Vending Machines" clarity pass (2026-08-07)
+
+User's dad flagged that the homepage's first section (How It Works)
+shows a close-up device photo with a touchscreen, but nothing nearby
+says what it *is* — could read as a tablet/kiosk demo to a first-time
+viewer rather than a vending machine. Two small, independent fixes:
+
+1. How It Works section eyebrow: `"STACKD"` → `"STACKD Vending
+   Machines"` (`how-it-works-demo.tsx`) — reuses "Vending" language
+   already established in the Hero, not a new term.
+2. Site header logo lockup (`site-header.tsx`): added a small subtitle
+   under the "STACKD" wordmark reading "Vending Machines," visible on
+   every page from the first pixel. First attempt gave it a filled
+   pill/badge background — user and their dad both immediately read it
+   as "a sticker" slapped onto the logo. Fixed by dropping the
+   background entirely: plain small-caps text, color + tracking only,
+   matching every other label on the site (no boxed/pill treatment
+   exists anywhere else in the design system — this confirms why one
+   stood out as wrong on sight).
+
+## Open investigation: mobile layout gaps, not yet reproduced (2026-08-07)
+
+User's partner (a designer, viewing on iPhone via WhatsApp's in-app
+browser) reported large unexplained blank vertical gaps in two places:
+before the "Meet STACKD" heading, and between Revenue Estimator and
+Venue Communications. Screenshots clearly show real, large gaps (roughly
+half a mobile viewport height).
+
+Investigated by resizing the browser tool to a 375×812 mobile viewport
+and measuring actual computed layout (`getBoundingClientRect` on every
+section, plus the Meet STACKD icon/heading specifically) — **could not
+reproduce either gap**. Meet STACKD's icon-to-heading spacing measured
+exactly as expected from its own padding/margin values; Revenue
+Estimator and Venue Communications sit with zero gap between them.
+
+Working theory: this is specific to WhatsApp's in-app browser (a known
+non-standard WebView, not real mobile Safari/Chrome), likely related to
+Framer Motion's `whileInView` scroll-reveal animations or the
+`position: sticky` 320vh How It Works section not being the standard
+Chromium engine this was tested against. Asked the user to confirm by
+opening the link directly in real Safari/Chrome (bypassing WhatsApp's
+browser) — **unresolved as of this entry, waiting on that confirmation
+before deciding whether this needs a code fix or is out of our
+control.** If it reproduces in real mobile Safari too, next step is
+checking whether simplifying/removing `whileInView` viewport-margin
+thresholds or the sticky section's `100vh`/`320vh` sizing fixes it on
+iOS specifically.
