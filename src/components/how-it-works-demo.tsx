@@ -190,7 +190,7 @@ export function HowItWorksDemo() {
       className="relative border-t border-charcoal/10 bg-offwhite text-charcoal"
       style={{ height: "320vh" }}
     >
-      <div className="sticky top-0 flex min-h-screen items-center overflow-hidden px-6 py-20 md:px-10">
+      <div className="sticky top-0 flex min-h-[100dvh] items-center overflow-hidden px-6 py-20 md:px-10">
         <GeometricBackground tone="light" />
         <div className="relative mx-auto grid w-full max-w-6xl items-center gap-16 lg:grid-cols-[minmax(0,400px)_1fr]">
           <div className="mx-auto w-full max-w-[360px]">
