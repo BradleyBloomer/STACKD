@@ -1214,15 +1214,44 @@ reproduce either gap**. Meet STACKD's icon-to-heading spacing measured
 exactly as expected from its own padding/margin values; Revenue
 Estimator and Venue Communications sit with zero gap between them.
 
-Working theory: this is specific to WhatsApp's in-app browser (a known
-non-standard WebView, not real mobile Safari/Chrome), likely related to
-Framer Motion's `whileInView` scroll-reveal animations or the
-`position: sticky` 320vh How It Works section not being the standard
-Chromium engine this was tested against. Asked the user to confirm by
-opening the link directly in real Safari/Chrome (bypassing WhatsApp's
-browser) — **unresolved as of this entry, waiting on that confirmation
-before deciding whether this needs a code fix or is out of our
-control.** If it reproduces in real mobile Safari too, next step is
-checking whether simplifying/removing `whileInView` viewport-margin
-thresholds or the sticky section's `100vh`/`320vh` sizing fixes it on
-iOS specifically.
+**Update: confirmed NOT a WhatsApp-only artifact.** Two independent
+people (the user's brother, separately their partner) hit the same
+gaps opening `stackdvending.co.za` directly in real mobile Safari, no
+WhatsApp involved. This is a genuine iOS Safari (WebKit) rendering bug
+in the site's code — ruling out the earlier "non-standard WebView"
+theory entirely. It reproduces on real Safari but not in a
+Chromium-based mobile-viewport simulation, so it's WebKit-specific.
+
+Prime suspects, in order of likelihood, for whoever picks this up next:
+1. **`min-h-screen` (`100vh`) on the How It Works sticky container**
+   (`how-it-works-demo.tsx`, the `flex min-h-screen items-center
+   overflow-hidden` div). Classic iOS Safari bug: `100vh` sizes to the
+   viewport with the address bar *hidden* (the largest possible state),
+   taller than what's actually visible most of the time while
+   scrolling — for a `position: sticky` + `height: 320vh` scroll-jacked
+   section specifically, this mismatch can absolutely produce exactly
+   this kind of unaccounted gap right where the section releases into
+   whatever follows it (Meet STACKD). Try `min-h-[100dvh]` (dynamic
+   viewport unit, exists specifically to fix this) in place of
+   `min-h-screen` there first.
+2. Framer Motion's `whileInView` with `viewport={{ once: true, margin:
+   "-100px" }}` (used throughout — Meet STACKD, Revenue Estimator,
+   Venue Communications, etc.) — if WebKit's IntersectionObserver
+   handles the negative rootMargin differently, elements can stay stuck
+   at their `initial` state. Doesn't obviously explain a *gap* (opacity/
+   transform don't remove layout space) but worth ruling out, since it
+   could interact with #1 in a way that isn't obvious without a real
+   device to test on.
+3. Only #1 has a plausible mechanism for the *first* gap (right after
+   the sticky section). The *second* gap (Revenue Estimator → Venue
+   Communications) involves no `vh` units or sticky positioning at all —
+   if #1's fix doesn't also resolve gap #2, this needs a fresh look at
+   what those two specific sections have in common (both use
+   `GeometricBackground`'s `absolute inset-0` pattern layer — check
+   whether that's interacting with WebKit's handling of `overflow-hidden`
+   on an ancestor `relative` container).
+
+No real iOS device available in this environment to verify directly —
+whoever picks this up should make a change, push, and get the reporter
+(user's brother or partner) to reload and confirm, rather than trying
+to fully resolve it from static analysis alone.
