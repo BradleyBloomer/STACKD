@@ -1255,3 +1255,53 @@ No real iOS device available in this environment to verify directly —
 whoever picks this up should make a change, push, and get the reporter
 (user's brother or partner) to reload and confirm, rather than trying
 to fully resolve it from static analysis alone.
+
+**Update: two more precise reports landed, confirming the theory.**
+User's partner explicitly reported "the logo doesn't appear" on Meet
+STACKD, and a screenshot showed the Revenue Estimator → Venue
+Communications gap in more detail — Revenue Estimator's own content
+renders fully, but the gap sits between its end and Venue
+Communications' eyebrow, with the hex/logo pattern tiling continuously
+through it (i.e. it's live section background, not a layout hole).
+
+Two fixes applied based on this:
+1. **`stackd-icon-assemble.tsx`**: the icon used 13 separate
+   `motion.path` elements, each with its *own* independent
+   `whileInView` + `viewport={{ once: true, margin: "-80px" }}` — 13
+   independent IntersectionObserver instances on nested SVG `<path>`
+   elements, a combination WebKit has long-standing issues with. Fixed
+   by dropping `whileInView` entirely in favor of `animate` (fires on
+   mount, no IntersectionObserver dependency) — directly explains "logo
+   doesn't appear," since a fully-stuck-at-initial icon reads as
+   invisible.
+2. **Removed `margin: "-100px"` from every remaining `whileInView`
+   viewport threshold site-wide** (6 occurrences across
+   `advertising-section.tsx`, `closing-cta.tsx`, `meet-stackd.tsx`,
+   `partnership-statement.tsx`, `revenue-estimator.tsx`) — negative
+   margins shrink the trigger zone, and combined with Safari's
+   IntersectionObserver historically updating on a laggier cadence
+   than Chromium during momentum scroll, content can visibly lag well
+   behind the actual scroll position before popping in — which reads
+   exactly like "a gap" in a screenshot taken mid-scroll. Left `once:
+   true` in place (still only animates once), just removed the
+   margin restriction so the trigger fires as soon as any part of the
+   element is on screen instead of requiring 100px of overscroll first.
+
+**Verification limitation discovered while testing this fix**: tried
+to confirm the icon fix by checking computed `opacity`/`transform` on
+the animated paths via the browser tool — found them still stuck at
+their `initial` values even after a full dev-server restart and hard
+reload. Investigating further, the *same* stuck-at-initial symptom
+showed up on the Hero H1, which uses plain `animate`-on-mount (no
+`whileInView` at all) and has visibly worked all session. Conclusion:
+this browser tool's tab isn't actually composited/visible on screen
+(same root cause as the recurring "Browser pane is not displayed, so
+the page is not compositing frames" screenshot failures throughout this
+project) — Chromium can throttle or fully skip the requestAnimationFrame
+loop for a non-composited tab, and Framer Motion's animations run on
+RAF internally. **This means computed-style checks on animation
+progress are not a reliable verification method in this environment,
+independent of whether the underlying code is correct.** Don't waste
+time chasing an animation-completion check that shows "stuck" here —
+verify Framer Motion animation fixes by code review + real device
+only.

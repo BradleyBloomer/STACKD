@@ -43,8 +43,7 @@ export function StackdIconAssemble({ className = "" }: { className?: string }) {
           fillOpacity="1"
           d={strip.d}
           initial={reduceMotion ? false : { y: 34, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true, margin: "-80px" }}
+          animate={{ y: 0, opacity: 1 }}
           transition={{
             duration: 0.55,
             delay: i * 0.045,

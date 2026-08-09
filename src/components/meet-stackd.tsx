@@ -18,7 +18,7 @@ export function MeetStackd() {
   const reveal = (delay: number) => ({
     initial: reduceMotion ? false : { opacity: 0, y: 14 },
     whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, margin: "-100px" },
+    viewport: { once: true },
     transition: { duration: 0.6, delay, ease: EASE },
   });
 
