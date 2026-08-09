@@ -25,15 +25,24 @@ const STRIPS: { d: string; fill: string }[] = [
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
+const stripVariants = {
+  hidden: { y: 34, opacity: 0 },
+  visible: { y: 0, opacity: 1 },
+};
+
 export function StackdIconAssemble({ className = "" }: { className?: string }) {
   const reduceMotion = useReducedMotion();
 
   return (
-    <svg
+    <motion.svg
       viewBox="136.234 70.105 227.527 258.977"
       className={className}
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
+      initial={reduceMotion ? false : "hidden"}
+      whileInView="visible"
+      viewport={{ once: true }}
+      transition={{ staggerChildren: 0.045 }}
     >
       {STRIPS.map((strip, i) => (
         <motion.path
@@ -42,15 +51,10 @@ export function StackdIconAssemble({ className = "" }: { className?: string }) {
           fill={strip.fill}
           fillOpacity="1"
           d={strip.d}
-          initial={reduceMotion ? false : { y: 34, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{
-            duration: 0.55,
-            delay: i * 0.045,
-            ease: EASE,
-          }}
+          variants={stripVariants}
+          transition={{ duration: 0.55, ease: EASE }}
         />
       ))}
-    </svg>
+    </motion.svg>
   );
 }
