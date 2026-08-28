@@ -60,7 +60,7 @@ export function AdvertisingSection() {
   return (
     <section className="relative overflow-hidden border-t border-charcoal/10 bg-offwhite">
       <GeometricBackground tone="light" />
-      <div className="relative mx-auto max-w-6xl px-6 py-32 md:px-10">
+      <div className="relative mx-auto max-w-6xl px-6 pt-32 pb-16 md:px-10">
         <div className="grid items-center gap-16 lg:grid-cols-[1.15fr_1fr] lg:gap-20">
           <div>
             <motion.p
