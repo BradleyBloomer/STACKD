@@ -21,7 +21,7 @@ export function HeroProduct() {
   });
 
   return (
-    <section className="relative overflow-hidden border-t border-charcoal/10 bg-offwhite px-6 py-24 md:px-10 lg:py-32">
+    <section className="relative overflow-hidden bg-offwhite px-6 py-24 md:px-10 lg:py-32">
       <GeometricBackground tone="light" />
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-2 lg:gap-12">

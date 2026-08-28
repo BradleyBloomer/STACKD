@@ -11,10 +11,10 @@ export default function Home() {
     <>
       <HowItWorksDemo />
       <MeetStackd />
+      <AdvertisingSection />
       <HeroProduct />
       <PartnershipStatement />
       <RevenueEstimator />
-      <AdvertisingSection />
       <ClosingCta />
     </>
   );
