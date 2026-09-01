@@ -40,6 +40,11 @@ export const metadata: Metadata = {
     title: "STACKD | Smart Vending Machines for Hospitality Venues",
     description: SITE_DESCRIPTION,
   },
+  verification: {
+    other: {
+      "msvalidate.01": "1050877A9F9E7FC044C920A508438034",
+    },
+  },
 };
 
 const ORGANIZATION_JSON_LD = {
