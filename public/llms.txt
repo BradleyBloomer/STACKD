@@ -1,0 +1,21 @@
+# STACKD
+
+> STACKD is a South African automated retail technology company. We design, install, and operate compact, wall-mounted vending machines for premium hospitality venues (bars, restaurants, and similar spaces). Our first automated retail solution focuses on premium vape products — an ID-verified category suited to cashless, age-verified, automated sale.
+
+STACKD handles installation, stocking, monitoring, and support for every machine at no upfront cost to the venue; the venue provides the wall space and earns a fixed share of every sale.
+
+## Key pages
+
+- [Home](https://stackdvending.co.za/): Overview of STACKD, the machine, and how the partnership works.
+- [How It Works](https://stackdvending.co.za/how-it-works): The customer purchase flow — tap to begin, age verification, browse, secure payment, collect.
+- [Why STACKD](https://stackdvending.co.za/why-stackd): Why hospitality venues partner with STACKD, plus frequently asked questions about cost, revenue share, and setup.
+- [About](https://stackdvending.co.za/about): Company background and operating focus.
+- [Partner With Us](https://stackdvending.co.za/partner): Start a partnership enquiry to host a STACKD machine.
+- [Contact](https://stackdvending.co.za/contact): General enquiries.
+
+## Facts
+
+- Operates in: South Africa.
+- Current product focus: premium vape products (stated explicitly as the first vertical, not the whole identity — STACKD is an automated retail technology company, not a vape company).
+- Revenue model: venues earn a fixed percentage share of every sale; no upfront cost to the venue.
+- Machine: compact, wall-mounted, matte black finish, 21.5" touchscreen.

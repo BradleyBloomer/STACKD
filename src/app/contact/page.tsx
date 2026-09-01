@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ContactForm } from "@/components/contact-form";
 
 export const metadata: Metadata = {
-  title: "Contact | STACKD",
+  title: "Contact STACKD | Vending Machine Partnerships & Support",
   description:
     "Get in touch with STACKD about partnerships, press, or general questions.",
 };

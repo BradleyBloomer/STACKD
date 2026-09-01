@@ -19,10 +19,41 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
+const SITE_URL = "https://stackdvending.co.za";
+const SITE_DESCRIPTION =
+  "STACKD installs and manages smart, automated vending machines in premium South African hospitality venues — cashless, age-verified, and fully remote-managed. Our first automated retail solution focuses on premium vape products.";
+
 export const metadata: Metadata = {
-  title: "STACKD | Automated Retail",
-  description:
-    "STACKD builds and operates automated retail infrastructure for premium hospitality venues across South Africa.",
+  metadataBase: new URL(SITE_URL),
+  title: "STACKD | Smart Vending Machines for Hospitality Venues in South Africa",
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    title: "STACKD | Smart Vending Machines for Hospitality Venues",
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: "STACKD",
+    locale: "en_ZA",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "STACKD | Smart Vending Machines for Hospitality Venues",
+    description: SITE_DESCRIPTION,
+  },
+};
+
+const ORGANIZATION_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "STACKD",
+  url: SITE_URL,
+  logo: `${SITE_URL}/brand/derivatives/icon-black.svg`,
+  description: SITE_DESCRIPTION,
+  areaServed: {
+    "@type": "Country",
+    name: "South Africa",
+  },
+  sameAs: [],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -32,6 +63,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-charcoal text-offwhite">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_JSON_LD) }}
+        />
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />

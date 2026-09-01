@@ -3,7 +3,7 @@ import { HowItWorksDemo } from "@/components/how-it-works-demo";
 import { ClosingCta } from "@/components/closing-cta";
 
 export const metadata: Metadata = {
-  title: "How It Works | STACKD",
+  title: "How STACKD's Vending Machine Works | STACKD",
   description:
     "How a customer buys from a STACKD machine — tap to begin, age verification, browse, pay, and collect.",
 };

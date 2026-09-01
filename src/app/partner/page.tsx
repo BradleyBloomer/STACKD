@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PartnerForm } from "@/components/partner-form";
 
 export const metadata: Metadata = {
-  title: "Partner With Us | STACKD",
+  title: "Partner With STACKD | Host a Vending Machine at Your Venue",
   description:
     "Tell us about your venue and start a conversation about hosting STACKD's automated retail technology.",
 };

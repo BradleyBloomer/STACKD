@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ClosingCta } from "@/components/closing-cta";
 
 export const metadata: Metadata = {
-  title: "About | STACKD",
+  title: "About STACKD | South African Automated Retail Company",
   description:
     "STACKD is a South African automated retail technology company building fully managed retail machines for premium hospitality venues.",
 };
